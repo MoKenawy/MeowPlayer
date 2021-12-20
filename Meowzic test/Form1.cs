@@ -22,7 +22,6 @@ namespace WindowsFormsApp2
     {
         private string filePath = string.Empty;
         public static List<string> playListDir = new List<string>();
-        public static List<string> playListName = new List<string>();
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
         private Image appImage = Meowzic_test.Properties.Resources.cat_music;
