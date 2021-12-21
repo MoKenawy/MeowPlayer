@@ -757,7 +757,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
-            this.logo.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
             // 
             // Meowzic
             // 

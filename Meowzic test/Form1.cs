@@ -427,10 +427,11 @@ namespace WindowsFormsApp2
             {
 
                 //openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|Mp3 files (*.mp3)|*.mp3";
+                openFileDialog.Filter = "All files (*.*)|*.*|Mp3 files (*.mp3)|*.mp3";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
                 openFileDialog.Multiselect = true;
+                openFileDialog.DefaultExt = "*.mp3";
                 dialogResult = openFileDialog.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using NAudio.Wave;
-
 namespace NAudio.WaveFormRenderer
 {
     public class WaveFormRenderer
