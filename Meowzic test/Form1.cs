@@ -50,6 +50,9 @@ namespace WindowsFormsApp2
         public Meowzic()
         {
             InitializeComponent();
+            this.panelTopContent.BringToFront();
+            this.positionIndicatorPanel.BringToFront();
+
         }
 
         private void MoveCheckedUp()
@@ -172,11 +175,25 @@ namespace WindowsFormsApp2
         private void OnPositionTimeEvent(object sender, ElapsedEventArgs e)
         {
             if (audioFile != null)
-                Invoke(new Action(() =>
-                {
-                    double posEquation = audioFile.Position * 200 / audioFile.Length;
-                    positionTrackBar.Value = (int)Math.Round(posEquation);
-                }));
+                if (positionTimer != null)
+                    try
+                    {
+                        Invoke(new Action(() =>
+                        {
+                            double posEquation1 = audioFile.Position * 200 / audioFile.Length;
+                            positionTrackBar.Value = (int)Math.Round(posEquation1);
+
+                            double posIndicator_X = audioFile.Position * pictureBox1.Width / audioFile.Length;
+
+
+                            positionIndicatorPanel.Location = new Point((int)Math.Round(posIndicator_X), 0);
+                        }));
+                    }
+                    catch (System.InvalidOperationException)
+                    {
+
+                    }
+
         }
 
         //private void OnTimeEvent(object sender, ElapsedEventArgs e)
@@ -586,6 +603,9 @@ namespace WindowsFormsApp2
                         //this.BackgroundImage = image;
                         pictureBox1.Image = image;
                     }
+                    positionIndicatorPanel.Visible = true;
+                    positionTrackBar.Visible = false;
+
                 }
             }
 
@@ -769,7 +789,6 @@ namespace WindowsFormsApp2
                 int MouseXPosition = mouseClick.X;
                 audioFile.Position = MouseXPosition * (audioFile.Length / pictureBox1.Width);
                 playList.SelectedIndex = playIndex;
-                MessageBox.Show(audioFile.Position.ToString());
             }
 
             playButton.Focus();
@@ -843,6 +862,8 @@ namespace WindowsFormsApp2
         {
             pictureBox1.Image = appImage;
             renderWaveView = false;
+            positionIndicatorPanel.Visible = false;
+            positionTrackBar.Visible = true;
         }
 
         private void RenderWaveButton_Click(object sender, EventArgs e)

@@ -48,8 +48,8 @@
             this.afterButton = new FontAwesome.Sharp.IconPictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTopContent = new System.Windows.Forms.Panel();
-            this.positionTrackBar = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.positionTrackBar = new System.Windows.Forms.TrackBar();
             this.playList = new System.Windows.Forms.CheckedListBox();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
@@ -69,6 +69,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.MediaButton = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.positionIndicatorPanel = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onRepeatButton)).BeginInit();
@@ -79,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.volBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.afterButton)).BeginInit();
             this.panelTopContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.SettingsSubMenu.SuspendLayout();
@@ -160,22 +161,23 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.onRepeatButton, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.playButton, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.beforeButton, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.rewindButton, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.advanceButton, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.volBar, 7, 1);
-            this.tableLayoutPanel1.Controls.Add(this.afterButton, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.onRepeatButton, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.playButton, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.beforeButton, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.rewindButton, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.advanceButton, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.volBar, 7, 2);
+            this.tableLayoutPanel1.Controls.Add(this.afterButton, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 465);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 476);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.99977F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.00023F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(921, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(921, 69);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // onRepeatButton
@@ -188,8 +190,8 @@
             this.onRepeatButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.onRepeatButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.onRepeatButton.IconSize = 40;
-            this.onRepeatButton.Location = new System.Drawing.Point(498, 19);
-            this.onRepeatButton.Margin = new System.Windows.Forms.Padding(25, 3, 10, 3);
+            this.onRepeatButton.Location = new System.Drawing.Point(491, 13);
+            this.onRepeatButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.onRepeatButton.Name = "onRepeatButton";
             this.onRepeatButton.Size = new System.Drawing.Size(40, 40);
             this.onRepeatButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -211,7 +213,7 @@
             this.playButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.playButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.playButton.IconSize = 40;
-            this.playButton.Location = new System.Drawing.Point(303, 19);
+            this.playButton.Location = new System.Drawing.Point(311, 13);
             this.playButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(40, 40);
@@ -234,7 +236,7 @@
             this.beforeButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.beforeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.beforeButton.IconSize = 40;
-            this.beforeButton.Location = new System.Drawing.Point(183, 19);
+            this.beforeButton.Location = new System.Drawing.Point(191, 13);
             this.beforeButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.beforeButton.Name = "beforeButton";
             this.beforeButton.Size = new System.Drawing.Size(40, 40);
@@ -257,7 +259,7 @@
             this.rewindButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.rewindButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.rewindButton.IconSize = 40;
-            this.rewindButton.Location = new System.Drawing.Point(243, 19);
+            this.rewindButton.Location = new System.Drawing.Point(251, 13);
             this.rewindButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.rewindButton.Name = "rewindButton";
             this.rewindButton.Size = new System.Drawing.Size(40, 40);
@@ -280,7 +282,7 @@
             this.advanceButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.advanceButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.advanceButton.IconSize = 40;
-            this.advanceButton.Location = new System.Drawing.Point(363, 19);
+            this.advanceButton.Location = new System.Drawing.Point(371, 13);
             this.advanceButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.advanceButton.Name = "advanceButton";
             this.advanceButton.Size = new System.Drawing.Size(40, 40);
@@ -298,7 +300,7 @@
             this.volBar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.volBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.volBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.volBar.Location = new System.Drawing.Point(598, 17);
+            this.volBar.Location = new System.Drawing.Point(591, 11);
             this.volBar.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
             this.volBar.Maximum = 100;
             this.volBar.Name = "volBar";
@@ -320,7 +322,7 @@
             this.afterButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.afterButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.afterButton.IconSize = 40;
-            this.afterButton.Location = new System.Drawing.Point(423, 19);
+            this.afterButton.Location = new System.Drawing.Point(431, 13);
             this.afterButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.afterButton.Name = "afterButton";
             this.afterButton.Size = new System.Drawing.Size(40, 40);
@@ -342,40 +344,26 @@
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.textBox2.HideSelection = false;
-            this.textBox2.Location = new System.Drawing.Point(31, 28);
+            this.textBox2.Location = new System.Drawing.Point(35, 22);
             this.textBox2.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(127, 23);
             this.textBox2.TabIndex = 15;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Visible = false;
             // 
             // panelTopContent
             // 
             this.panelTopContent.BackColor = System.Drawing.Color.White;
-            this.panelTopContent.Controls.Add(this.positionTrackBar);
+            this.panelTopContent.Controls.Add(this.positionIndicatorPanel);
             this.panelTopContent.Controls.Add(this.pictureBox1);
-            this.panelTopContent.Controls.Add(this.playList);
+            this.panelTopContent.Controls.Add(this.positionTrackBar);
             this.panelTopContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTopContent.Location = new System.Drawing.Point(0, 0);
+            this.panelTopContent.Location = new System.Drawing.Point(136, 0);
             this.panelTopContent.Name = "panelTopContent";
-            this.panelTopContent.Size = new System.Drawing.Size(921, 465);
+            this.panelTopContent.Size = new System.Drawing.Size(702, 476);
             this.panelTopContent.TabIndex = 2;
-            // 
-            // positionTrackBar
-            // 
-            this.positionTrackBar.AutoSize = false;
-            this.positionTrackBar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.positionTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.positionTrackBar.Location = new System.Drawing.Point(151, 440);
-            this.positionTrackBar.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
-            this.positionTrackBar.Maximum = 200;
-            this.positionTrackBar.Name = "positionTrackBar";
-            this.positionTrackBar.Size = new System.Drawing.Size(662, 25);
-            this.positionTrackBar.TabIndex = 17;
-            this.positionTrackBar.TabStop = false;
-            this.positionTrackBar.TickFrequency = 2;
-            this.positionTrackBar.Scroll += new System.EventHandler(this.positionTrackBar_Scroll);
             // 
             // pictureBox1
             // 
@@ -386,11 +374,28 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(816, 465);
+            this.pictureBox1.Size = new System.Drawing.Size(702, 461);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.picturePositionChange_Click);
+            // 
+            // positionTrackBar
+            // 
+            this.positionTrackBar.AutoSize = false;
+            this.positionTrackBar.BackColor = System.Drawing.Color.GhostWhite;
+            this.positionTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.positionTrackBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.positionTrackBar.Location = new System.Drawing.Point(0, 461);
+            this.positionTrackBar.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.positionTrackBar.Maximum = 200;
+            this.positionTrackBar.Name = "positionTrackBar";
+            this.positionTrackBar.Size = new System.Drawing.Size(702, 15);
+            this.positionTrackBar.TabIndex = 17;
+            this.positionTrackBar.TabStop = false;
+            this.positionTrackBar.TickFrequency = 2;
+            this.positionTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.positionTrackBar.Scroll += new System.EventHandler(this.positionTrackBar_Scroll);
             // 
             // playList
             // 
@@ -400,25 +405,24 @@
             this.playList.Font = new System.Drawing.Font("Perpetua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playList.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.playList.FormattingEnabled = true;
-            this.playList.Location = new System.Drawing.Point(816, 0);
-            this.playList.Margin = new System.Windows.Forms.Padding(0);
+            this.playList.Location = new System.Drawing.Point(838, 0);
             this.playList.Name = "playList";
             this.playList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.playList.Size = new System.Drawing.Size(105, 465);
+            this.playList.Size = new System.Drawing.Size(83, 476);
             this.playList.TabIndex = 13;
             this.playList.UseCompatibleTextRendering = true;
             this.playList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkedListBox1_KeyDown);
             // 
             // panelContent
             // 
-            this.panelContent.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelContent.Controls.Add(this.panelSideMenu);
+            this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Controls.Add(this.panelTopContent);
-            this.panelContent.Controls.Add(this.tableLayoutPanel1);
+            this.panelContent.Controls.Add(this.panelSideMenu);
+            this.panelContent.Controls.Add(this.playList);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(921, 545);
+            this.panelContent.Size = new System.Drawing.Size(921, 476);
             this.panelContent.TabIndex = 3;
             // 
             // panelSideMenu
@@ -437,7 +441,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(150, 465);
+            this.panelSideMenu.Size = new System.Drawing.Size(136, 476);
             this.panelSideMenu.TabIndex = 16;
             // 
             // AboutButton
@@ -450,7 +454,7 @@
             this.AboutButton.Margin = new System.Windows.Forms.Padding(0);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.AboutButton.Size = new System.Drawing.Size(129, 46);
+            this.AboutButton.Size = new System.Drawing.Size(115, 46);
             this.AboutButton.TabIndex = 7;
             this.AboutButton.Text = "About";
             this.AboutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,7 +472,7 @@
             this.SettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.SettingsSubMenu.Location = new System.Drawing.Point(0, 570);
             this.SettingsSubMenu.Name = "SettingsSubMenu";
-            this.SettingsSubMenu.Size = new System.Drawing.Size(129, 80);
+            this.SettingsSubMenu.Size = new System.Drawing.Size(115, 80);
             this.SettingsSubMenu.TabIndex = 6;
             this.SettingsSubMenu.Visible = false;
             // 
@@ -484,7 +488,7 @@
             this.RenderWaveButton.Location = new System.Drawing.Point(0, 40);
             this.RenderWaveButton.Name = "RenderWaveButton";
             this.RenderWaveButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.RenderWaveButton.Size = new System.Drawing.Size(129, 40);
+            this.RenderWaveButton.Size = new System.Drawing.Size(115, 40);
             this.RenderWaveButton.TabIndex = 9;
             this.RenderWaveButton.Text = "Render Wave";
             this.RenderWaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -503,7 +507,7 @@
             this.normalViewButton.Location = new System.Drawing.Point(0, 0);
             this.normalViewButton.Name = "normalViewButton";
             this.normalViewButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.normalViewButton.Size = new System.Drawing.Size(129, 40);
+            this.normalViewButton.Size = new System.Drawing.Size(115, 40);
             this.normalViewButton.TabIndex = 8;
             this.normalViewButton.Text = "Normal View";
             this.normalViewButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -520,7 +524,7 @@
             this.settingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.settingsButton.Size = new System.Drawing.Size(129, 46);
+            this.settingsButton.Size = new System.Drawing.Size(115, 46);
             this.settingsButton.TabIndex = 5;
             this.settingsButton.Text = "Settings";
             this.settingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -539,7 +543,7 @@
             this.PlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PlaylistSubMenu.Location = new System.Drawing.Point(0, 404);
             this.PlaylistSubMenu.Name = "PlaylistSubMenu";
-            this.PlaylistSubMenu.Size = new System.Drawing.Size(129, 120);
+            this.PlaylistSubMenu.Size = new System.Drawing.Size(115, 120);
             this.PlaylistSubMenu.TabIndex = 4;
             this.PlaylistSubMenu.Visible = false;
             // 
@@ -555,7 +559,7 @@
             this.clearPlaylistButton.Location = new System.Drawing.Point(0, 80);
             this.clearPlaylistButton.Name = "clearPlaylistButton";
             this.clearPlaylistButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.clearPlaylistButton.Size = new System.Drawing.Size(129, 40);
+            this.clearPlaylistButton.Size = new System.Drawing.Size(115, 40);
             this.clearPlaylistButton.TabIndex = 7;
             this.clearPlaylistButton.Text = "Clear";
             this.clearPlaylistButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -574,7 +578,7 @@
             this.savePlaylistButton.Location = new System.Drawing.Point(0, 40);
             this.savePlaylistButton.Name = "savePlaylistButton";
             this.savePlaylistButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.savePlaylistButton.Size = new System.Drawing.Size(129, 40);
+            this.savePlaylistButton.Size = new System.Drawing.Size(115, 40);
             this.savePlaylistButton.TabIndex = 6;
             this.savePlaylistButton.Text = "Save Playlist";
             this.savePlaylistButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -593,7 +597,7 @@
             this.openPlaylistButton.Location = new System.Drawing.Point(0, 0);
             this.openPlaylistButton.Name = "openPlaylistButton";
             this.openPlaylistButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.openPlaylistButton.Size = new System.Drawing.Size(129, 40);
+            this.openPlaylistButton.Size = new System.Drawing.Size(115, 40);
             this.openPlaylistButton.TabIndex = 5;
             this.openPlaylistButton.Text = "Open Playlist";
             this.openPlaylistButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -610,7 +614,7 @@
             this.PlaylistButton.Margin = new System.Windows.Forms.Padding(0);
             this.PlaylistButton.Name = "PlaylistButton";
             this.PlaylistButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.PlaylistButton.Size = new System.Drawing.Size(129, 46);
+            this.PlaylistButton.Size = new System.Drawing.Size(115, 46);
             this.PlaylistButton.TabIndex = 3;
             this.PlaylistButton.Text = "Playlist";
             this.PlaylistButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -629,7 +633,7 @@
             this.MediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.MediaSubMenu.Location = new System.Drawing.Point(0, 238);
             this.MediaSubMenu.Name = "MediaSubMenu";
-            this.MediaSubMenu.Size = new System.Drawing.Size(129, 120);
+            this.MediaSubMenu.Size = new System.Drawing.Size(115, 120);
             this.MediaSubMenu.TabIndex = 2;
             this.MediaSubMenu.Visible = false;
             // 
@@ -645,7 +649,7 @@
             this.RemoveButton.Location = new System.Drawing.Point(0, 80);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.RemoveButton.Size = new System.Drawing.Size(129, 40);
+            this.RemoveButton.Size = new System.Drawing.Size(115, 40);
             this.RemoveButton.TabIndex = 3;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -664,7 +668,7 @@
             this.checkAllButton.Location = new System.Drawing.Point(0, 40);
             this.checkAllButton.Name = "checkAllButton";
             this.checkAllButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.checkAllButton.Size = new System.Drawing.Size(129, 40);
+            this.checkAllButton.Size = new System.Drawing.Size(115, 40);
             this.checkAllButton.TabIndex = 2;
             this.checkAllButton.Text = "Check All";
             this.checkAllButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -683,7 +687,7 @@
             this.AddButton.Location = new System.Drawing.Point(0, 0);
             this.AddButton.Name = "AddButton";
             this.AddButton.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.AddButton.Size = new System.Drawing.Size(129, 40);
+            this.AddButton.Size = new System.Drawing.Size(115, 40);
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Add Music";
             this.AddButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -700,7 +704,7 @@
             this.MediaButton.Margin = new System.Windows.Forms.Padding(0);
             this.MediaButton.Name = "MediaButton";
             this.MediaButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.MediaButton.Size = new System.Drawing.Size(129, 46);
+            this.MediaButton.Size = new System.Drawing.Size(115, 46);
             this.MediaButton.TabIndex = 0;
             this.MediaButton.Text = "Media";
             this.MediaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -716,8 +720,19 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(129, 192);
+            this.panelLogo.Size = new System.Drawing.Size(115, 192);
             this.panelLogo.TabIndex = 1;
+            // 
+            // positionIndicatorPanel
+            // 
+            this.positionIndicatorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.positionIndicatorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(19)))), ((int)(((byte)(128)))));
+            this.positionIndicatorPanel.Location = new System.Drawing.Point(0, 5);
+            this.positionIndicatorPanel.Name = "positionIndicatorPanel";
+            this.positionIndicatorPanel.Size = new System.Drawing.Size(2, 456);
+            this.positionIndicatorPanel.TabIndex = 18;
+            this.positionIndicatorPanel.Visible = false;
             // 
             // Meowzic
             // 
@@ -725,6 +740,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 545);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -745,8 +761,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.volBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.afterButton)).EndInit();
             this.panelTopContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
             this.panelSideMenu.PerformLayout();
@@ -765,13 +781,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TrackBar volBar;
         private System.Windows.Forms.Panel panelTopContent;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem moveUpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem moveDownToolStripMenuItem1;
-        private System.Windows.Forms.CheckedListBox playList;
         private FontAwesome.Sharp.IconPictureBox afterButton;
         private FontAwesome.Sharp.IconPictureBox advanceButton;
         private FontAwesome.Sharp.IconPictureBox rewindButton;
@@ -796,7 +810,10 @@
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconPictureBox onRepeatButton;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckedListBox playList;
         private System.Windows.Forms.TrackBar positionTrackBar;
+        private System.Windows.Forms.Panel positionIndicatorPanel;
     }
 }
 
