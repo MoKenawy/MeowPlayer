@@ -758,7 +758,6 @@
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             this.logo.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.logo.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
             // Meowzic
             // 
