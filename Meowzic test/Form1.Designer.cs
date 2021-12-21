@@ -71,6 +71,7 @@
             this.MediaButton = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.ElapsedTimeShadow = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onRepeatButton)).BeginInit();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.volBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.afterButton)).BeginInit();
             this.panelTopContent.SuspendLayout();
+            this.positionIndicatorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).BeginInit();
             this.panelContent.SuspendLayout();
@@ -373,16 +375,20 @@
             this.positionIndicatorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.positionIndicatorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(19)))), ((int)(((byte)(128)))));
-            this.positionIndicatorPanel.Location = new System.Drawing.Point(0, 5);
+            this.positionIndicatorPanel.Controls.Add(this.ElapsedTimeShadow);
+            this.positionIndicatorPanel.Location = new System.Drawing.Point(0, 0);
+            this.positionIndicatorPanel.Margin = new System.Windows.Forms.Padding(0);
             this.positionIndicatorPanel.Name = "positionIndicatorPanel";
-            this.positionIndicatorPanel.Size = new System.Drawing.Size(2, 456);
+            this.positionIndicatorPanel.Size = new System.Drawing.Size(2, 461);
             this.positionIndicatorPanel.TabIndex = 18;
             this.positionIndicatorPanel.Visible = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Meowzic_test.Properties.Resources.cat_music;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -758,6 +764,19 @@
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
+            // ElapsedTimeShadow
+            // 
+            this.ElapsedTimeShadow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ElapsedTimeShadow.BackColor = System.Drawing.Color.Transparent;
+            this.ElapsedTimeShadow.Location = new System.Drawing.Point(0, 0);
+            this.ElapsedTimeShadow.Margin = new System.Windows.Forms.Padding(0);
+            this.ElapsedTimeShadow.Name = "ElapsedTimeShadow";
+            this.ElapsedTimeShadow.Size = new System.Drawing.Size(0, 461);
+            this.ElapsedTimeShadow.TabIndex = 19;
+            this.ElapsedTimeShadow.Visible = false;
+            this.ElapsedTimeShadow.Click += new System.EventHandler(this.picturePositionChange_Click);
+            // 
             // Meowzic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,7 +788,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Meowzic";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meowzic";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -785,6 +803,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.volBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.afterButton)).EndInit();
             this.panelTopContent.ResumeLayout(false);
+            this.positionIndicatorPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).EndInit();
             this.panelContent.ResumeLayout(false);
@@ -841,6 +860,7 @@
         private System.Windows.Forms.Panel positionIndicatorPanel;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Panel ElapsedTimeShadow;
     }
 }
 

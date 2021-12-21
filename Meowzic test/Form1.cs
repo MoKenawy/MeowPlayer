@@ -140,7 +140,9 @@ namespace WindowsFormsApp2
             //timer = new System.Timers.Timer();
             //timer.Interval = 1000;
             //timer.Elapsed += OnTimeEvent;
-
+            ElapsedTimeShadow.Parent = pictureBox1;
+            ElapsedTimeShadow.BackColor = Color.FromArgb(80, 28, 74, 173);
+            
 
 
             try
@@ -180,13 +182,15 @@ namespace WindowsFormsApp2
                     {
                         Invoke(new Action(() =>
                         {
-                            double posEquation1 = audioFile.Position * 200 / audioFile.Length;
-                            positionTrackBar.Value = (int)Math.Round(posEquation1);
+                        double posEquation1 = audioFile.Position * 200 / audioFile.Length;
+                        positionTrackBar.Value = (int)Math.Round(posEquation1);
 
-                            double posIndicator_X = audioFile.Position * pictureBox1.Width / audioFile.Length;
+                        double posIndicator_X = audioFile.Position * pictureBox1.Width / audioFile.Length;
 
 
-                            positionIndicatorPanel.Location = new Point((int)Math.Round(posIndicator_X), 0);
+                        positionIndicatorPanel.Location = new Point((int)Math.Round(posIndicator_X), 0);
+                        int elapsedTime = ((int)Math.Round(posIndicator_X));
+                        ElapsedTimeShadow.Size = new Size(elapsedTime, ElapsedTimeShadow.Height);
                         }));
                     }
                     catch (System.InvalidOperationException)
@@ -537,7 +541,8 @@ namespace WindowsFormsApp2
         }
 
         /// <summary>
-        /// delete misbehaviour : Stops Playing if deleting a duplicate of the currently running audio in the list
+        /// delete misbehaviour : Stops Playing if deleting a duplicate of the currently running audio in the list . Solved
+        /// delete misbehaviour : Not stopping when deleting a paused Audio .
         /// </summary>
         private void delete()
         {
@@ -547,7 +552,7 @@ namespace WindowsFormsApp2
             foreach (var item in checkeditems)
             {
 
-                if (audioFile != null)
+                if (audioFile != null )
                 {
                     if (audioFile.FileName == playListDir[(int)item - count] && ((int)item - count) == playIndex && !isDeleted)
                     {
@@ -572,6 +577,7 @@ namespace WindowsFormsApp2
                     playListDir.RemoveAt((int)item - count);
                     playList.Items.RemoveAt((int)item - count);
                     count++;
+                    playIndex--;
                 }
 
             }
@@ -605,6 +611,7 @@ namespace WindowsFormsApp2
                         pictureBox1.Image = image;
                     }
                     positionIndicatorPanel.Visible = true;
+                    ElapsedTimeShadow.Visible = true;
                     positionTrackBar.Visible = false;
 
                 }
@@ -864,6 +871,7 @@ namespace WindowsFormsApp2
             pictureBox1.Image = appImage;
             renderWaveView = false;
             positionIndicatorPanel.Visible = false;
+            ElapsedTimeShadow.Visible = false;
             positionTrackBar.Visible = true;
         }
 
