@@ -428,7 +428,7 @@
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
-            this.panelSideMenu.BackColor = System.Drawing.Color.GhostWhite;
+            this.panelSideMenu.BackColor = System.Drawing.Color.White;
             this.panelSideMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSideMenu.Controls.Add(this.AboutButton);
             this.panelSideMenu.Controls.Add(this.SettingsSubMenu);
@@ -448,6 +448,8 @@
             // 
             this.AboutButton.BackColor = System.Drawing.Color.White;
             this.AboutButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AboutButton.FlatAppearance.BorderSize = 0;
+            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AboutButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutButton.ForeColor = System.Drawing.Color.DodgerBlue;
             this.AboutButton.Location = new System.Drawing.Point(0, 650);
@@ -518,6 +520,8 @@
             // 
             this.settingsButton.BackColor = System.Drawing.Color.White;
             this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsButton.FlatAppearance.BorderSize = 0;
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.ForeColor = System.Drawing.Color.DodgerBlue;
             this.settingsButton.Location = new System.Drawing.Point(0, 524);
@@ -608,6 +612,8 @@
             // 
             this.PlaylistButton.BackColor = System.Drawing.Color.White;
             this.PlaylistButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PlaylistButton.FlatAppearance.BorderSize = 0;
+            this.PlaylistButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlaylistButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlaylistButton.ForeColor = System.Drawing.Color.DodgerBlue;
             this.PlaylistButton.Location = new System.Drawing.Point(0, 358);
@@ -698,6 +704,8 @@
             // 
             this.MediaButton.BackColor = System.Drawing.Color.White;
             this.MediaButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MediaButton.FlatAppearance.BorderSize = 0;
+            this.MediaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MediaButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MediaButton.ForeColor = System.Drawing.Color.DodgerBlue;
             this.MediaButton.Location = new System.Drawing.Point(0, 192);
