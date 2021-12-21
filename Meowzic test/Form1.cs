@@ -987,6 +987,20 @@ namespace WindowsFormsApp2
             }
         }
 
+
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            logo.BackColor = Color.White;
+
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            logo.BackColor = Color.DodgerBlue;
+
+        }
+
         private void AboutButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Sha Project, 12/12/2021");

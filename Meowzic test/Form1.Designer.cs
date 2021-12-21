@@ -48,6 +48,7 @@
             this.afterButton = new FontAwesome.Sharp.IconPictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTopContent = new System.Windows.Forms.Panel();
+            this.positionIndicatorPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.positionTrackBar = new System.Windows.Forms.TrackBar();
             this.playList = new System.Windows.Forms.CheckedListBox();
@@ -69,7 +70,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.MediaButton = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.positionIndicatorPanel = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onRepeatButton)).BeginInit();
@@ -87,6 +88,8 @@
             this.SettingsSubMenu.SuspendLayout();
             this.PlaylistSubMenu.SuspendLayout();
             this.MediaSubMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -365,6 +368,17 @@
             this.panelTopContent.Size = new System.Drawing.Size(702, 476);
             this.panelTopContent.TabIndex = 2;
             // 
+            // positionIndicatorPanel
+            // 
+            this.positionIndicatorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.positionIndicatorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(19)))), ((int)(((byte)(128)))));
+            this.positionIndicatorPanel.Location = new System.Drawing.Point(0, 5);
+            this.positionIndicatorPanel.Name = "positionIndicatorPanel";
+            this.positionIndicatorPanel.Size = new System.Drawing.Size(2, 456);
+            this.positionIndicatorPanel.TabIndex = 18;
+            this.positionIndicatorPanel.Visible = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -452,7 +466,7 @@
             this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AboutButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.AboutButton.Location = new System.Drawing.Point(0, 650);
+            this.AboutButton.Location = new System.Drawing.Point(0, 583);
             this.AboutButton.Margin = new System.Windows.Forms.Padding(0);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -472,7 +486,7 @@
             this.SettingsSubMenu.Controls.Add(this.RenderWaveButton);
             this.SettingsSubMenu.Controls.Add(this.normalViewButton);
             this.SettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingsSubMenu.Location = new System.Drawing.Point(0, 570);
+            this.SettingsSubMenu.Location = new System.Drawing.Point(0, 503);
             this.SettingsSubMenu.Name = "SettingsSubMenu";
             this.SettingsSubMenu.Size = new System.Drawing.Size(115, 80);
             this.SettingsSubMenu.TabIndex = 6;
@@ -524,7 +538,7 @@
             this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.settingsButton.Location = new System.Drawing.Point(0, 524);
+            this.settingsButton.Location = new System.Drawing.Point(0, 457);
             this.settingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -545,7 +559,7 @@
             this.PlaylistSubMenu.Controls.Add(this.savePlaylistButton);
             this.PlaylistSubMenu.Controls.Add(this.openPlaylistButton);
             this.PlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PlaylistSubMenu.Location = new System.Drawing.Point(0, 404);
+            this.PlaylistSubMenu.Location = new System.Drawing.Point(0, 337);
             this.PlaylistSubMenu.Name = "PlaylistSubMenu";
             this.PlaylistSubMenu.Size = new System.Drawing.Size(115, 120);
             this.PlaylistSubMenu.TabIndex = 4;
@@ -616,7 +630,7 @@
             this.PlaylistButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlaylistButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlaylistButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.PlaylistButton.Location = new System.Drawing.Point(0, 358);
+            this.PlaylistButton.Location = new System.Drawing.Point(0, 291);
             this.PlaylistButton.Margin = new System.Windows.Forms.Padding(0);
             this.PlaylistButton.Name = "PlaylistButton";
             this.PlaylistButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -637,7 +651,7 @@
             this.MediaSubMenu.Controls.Add(this.checkAllButton);
             this.MediaSubMenu.Controls.Add(this.AddButton);
             this.MediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MediaSubMenu.Location = new System.Drawing.Point(0, 238);
+            this.MediaSubMenu.Location = new System.Drawing.Point(0, 171);
             this.MediaSubMenu.Name = "MediaSubMenu";
             this.MediaSubMenu.Size = new System.Drawing.Size(115, 120);
             this.MediaSubMenu.TabIndex = 2;
@@ -708,7 +722,7 @@
             this.MediaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MediaButton.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MediaButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.MediaButton.Location = new System.Drawing.Point(0, 192);
+            this.MediaButton.Location = new System.Drawing.Point(0, 125);
             this.MediaButton.Margin = new System.Windows.Forms.Padding(0);
             this.MediaButton.Name = "MediaButton";
             this.MediaButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -723,24 +737,28 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackgroundImage = global::Meowzic_test.Properties.Resources.M_logo_3;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogo.Controls.Add(this.logo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(115, 192);
+            this.panelLogo.Size = new System.Drawing.Size(115, 125);
             this.panelLogo.TabIndex = 1;
             // 
-            // positionIndicatorPanel
+            // logo
             // 
-            this.positionIndicatorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.positionIndicatorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(19)))), ((int)(((byte)(128)))));
-            this.positionIndicatorPanel.Location = new System.Drawing.Point(0, 5);
-            this.positionIndicatorPanel.Name = "positionIndicatorPanel";
-            this.positionIndicatorPanel.Size = new System.Drawing.Size(2, 456);
-            this.positionIndicatorPanel.TabIndex = 18;
-            this.positionIndicatorPanel.Visible = false;
+            this.logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logo.BackColor = System.Drawing.Color.Transparent;
+            this.logo.Image = global::Meowzic_test.Properties.Resources.M_logo_3;
+            this.logo.Location = new System.Drawing.Point(17, 34);
+            this.logo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(75, 51);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
+            this.logo.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.logo.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
             // Meowzic
             // 
@@ -777,6 +795,8 @@
             this.SettingsSubMenu.ResumeLayout(false);
             this.PlaylistSubMenu.ResumeLayout(false);
             this.MediaSubMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -815,13 +835,14 @@
         private System.Windows.Forms.Button checkAllButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button MediaButton;
-        private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconPictureBox onRepeatButton;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckedListBox playList;
         private System.Windows.Forms.TrackBar positionTrackBar;
         private System.Windows.Forms.Panel positionIndicatorPanel;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox logo;
     }
 }
 
