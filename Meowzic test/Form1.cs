@@ -14,6 +14,7 @@ using NAudio.Wave.SampleProviders;
 using NAudio.WaveFormRenderer;
 using Meowzic_test;
 using FontAwesome.Sharp;
+using System.Timers;
 
 namespace WindowsFormsApp2
 {
@@ -30,6 +31,10 @@ namespace WindowsFormsApp2
         private bool renderWaveView;
         private bool onRepeat;
         private bool isDark;
+        System.Timers.Timer timer;
+        System.Timers.Timer positionTimer;
+        int hours, minutes, seconds , secondsElapsed;
+
         public List<string> PlayListDir
         {
             get { return playListDir; }
@@ -40,6 +45,7 @@ namespace WindowsFormsApp2
 
         // Delay between end of audio and start of another
         const int transTime = 0;
+        const int bytesPerSecond = 354564;
 
         public Meowzic()
         {
@@ -128,6 +134,12 @@ namespace WindowsFormsApp2
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //timer = new System.Timers.Timer();
+            //timer.Interval = 1000;
+            //timer.Elapsed += OnTimeEvent;
+
+
+
             try
             {
                 using (StreamReader lastPL = new StreamReader("last playlist.txt"))
@@ -156,6 +168,45 @@ namespace WindowsFormsApp2
             }
 
         }
+
+        private void OnPositionTimeEvent(object sender, ElapsedEventArgs e)
+        {
+            if (audioFile != null)
+                Invoke(new Action(() =>
+                {
+                    double posEquation = audioFile.Position * 200 / audioFile.Length;
+                    positionTrackBar.Value = (int)Math.Round(posEquation);
+                }));
+        }
+
+        //private void OnTimeEvent(object sender, ElapsedEventArgs e)
+        //{
+        //    if (audioFile != null)
+        //    {
+        //        Invoke(new Action(() =>
+        //        {
+        //            seconds = (int)(audioFile.Position / bytesPerSecond) - secondsElapsed;
+
+
+        //            if (seconds >= 60 && seconds >= 0)
+        //            {
+        //                minutes++;
+        //            }
+        //            if (minutes >= 60)
+        //            {
+        //                hours ++;
+        //            }
+        //            // > 317520 
+        //            // < 529200
+        //            // 354564
+        //            double time = audioFile.Position / bytesPerSecond;
+        //            textBox1.Text = audioFile.Position.ToString();
+        //            textBox2.Text = $"{hours} : {minutes} : {seconds}";
+        //            secondsElapsed = (minutes * 60) + (hours * 60 * 60);
+
+        //        })); 
+        //    }
+        //}
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -213,6 +264,12 @@ namespace WindowsFormsApp2
 
         private void Play()
         {
+            positionTimer = new System.Timers.Timer();
+            positionTimer.Interval = 500;
+            positionTimer.Elapsed += OnPositionTimeEvent;
+
+            //timer.Start();
+            positionTimer.Start();
             if (!PlayListIsEmpty())
             {
                 if (playButton.IconChar == FontAwesome.Sharp.IconChar.Play)
@@ -230,6 +287,8 @@ namespace WindowsFormsApp2
                         outputDevice.Init(audioFile);
 
                         visualizeAudio();
+
+                        seconds = minutes = hours = 0;
 
 
                     }
@@ -261,6 +320,8 @@ namespace WindowsFormsApp2
                         outputDevice.Stop();
                         pause = true;
                         pictureBox1.Enabled = false;
+                        //timer.Stop();
+                        positionTimer.Stop();
 
                     }
                     playButton.IconChar = FontAwesome.Sharp.IconChar.Play;
@@ -297,7 +358,7 @@ namespace WindowsFormsApp2
                     outputDevice.Init(audioFile);
                     visualizeAudio();
                     Thread.Sleep(transTime);
-
+                    seconds = minutes = hours = 0;
                     outputDevice.Play();
                     playList.SelectedIndex = playIndex;
 
@@ -317,6 +378,12 @@ namespace WindowsFormsApp2
                     // end of playlist
                     playIndex = 0;
                     pictureBox1.Enabled = false;
+                    if (timer != null)
+                    {
+                        timer.Stop();
+
+                    }
+                    //positionTimer.Stop();
 
                     if (onRepeat)
                     {
@@ -587,13 +654,7 @@ namespace WindowsFormsApp2
             BackColor = Color.White;
         }
 
-        //private void posBar_Scroll(object sender, EventArgs e)
-        //{
-        //    if (audioFile != null)
-        //    {
-        //        //Suspend audioFile.Position = (audioFile.Length / 200) * posBar.Value;
-        //    }
-        //}
+
 
         private void afterButton_Click(object sender, EventArgs e)
         {
@@ -700,7 +761,7 @@ namespace WindowsFormsApp2
             AddAudio();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void picturePositionChange_Click(object sender, EventArgs e)
         {
             if (renderWaveView)
             {
@@ -708,8 +769,7 @@ namespace WindowsFormsApp2
                 int MouseXPosition = mouseClick.X;
                 audioFile.Position = MouseXPosition * (audioFile.Length / pictureBox1.Width);
                 playList.SelectedIndex = playIndex;
-
-
+                MessageBox.Show(audioFile.Position.ToString());
             }
 
             playButton.Focus();
@@ -719,7 +779,7 @@ namespace WindowsFormsApp2
         {
             if (audioFile != null)
             {
-                audioFile.Position -= (long)Math.Pow(10, 6);
+                audioFile.Position -= bytesPerSecond * 5;
 
 
             }
@@ -731,7 +791,7 @@ namespace WindowsFormsApp2
         {
             if (audioFile != null)
             {
-                audioFile.Position += (long)Math.Pow(10, 6);
+                audioFile.Position += bytesPerSecond * 5;
 
 
             }
@@ -896,6 +956,14 @@ namespace WindowsFormsApp2
         private void moveDownToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MoveCheckedDown();
+        }
+
+        private void positionTrackBar_Scroll(object sender, EventArgs e)
+        {
+            if (audioFile != null)
+            {
+                audioFile.Position = (audioFile.Length / 200) * positionTrackBar.Value;
+            }
         }
 
         private void AboutButton_Click(object sender, EventArgs e)

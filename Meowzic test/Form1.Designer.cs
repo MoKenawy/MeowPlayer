@@ -46,7 +46,9 @@
             this.advanceButton = new FontAwesome.Sharp.IconPictureBox();
             this.volBar = new System.Windows.Forms.TrackBar();
             this.afterButton = new FontAwesome.Sharp.IconPictureBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTopContent = new System.Windows.Forms.Panel();
+            this.positionTrackBar = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playList = new System.Windows.Forms.CheckedListBox();
             this.panelContent = new System.Windows.Forms.Panel();
@@ -77,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.volBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.afterButton)).BeginInit();
             this.panelTopContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
@@ -164,6 +167,7 @@
             this.tableLayoutPanel1.Controls.Add(this.advanceButton, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.volBar, 7, 1);
             this.tableLayoutPanel1.Controls.Add(this.afterButton, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 465);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -329,9 +333,27 @@
             this.afterButton.MouseEnter += new System.EventHandler(this.IconPicture_Enter);
             this.afterButton.MouseLeave += new System.EventHandler(this.IconPicture_Leave);
             // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.textBox2.HideSelection = false;
+            this.textBox2.Location = new System.Drawing.Point(31, 28);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(127, 23);
+            this.textBox2.TabIndex = 15;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panelTopContent
             // 
             this.panelTopContent.BackColor = System.Drawing.Color.White;
+            this.panelTopContent.Controls.Add(this.positionTrackBar);
             this.panelTopContent.Controls.Add(this.pictureBox1);
             this.panelTopContent.Controls.Add(this.playList);
             this.panelTopContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -339,6 +361,21 @@
             this.panelTopContent.Name = "panelTopContent";
             this.panelTopContent.Size = new System.Drawing.Size(921, 465);
             this.panelTopContent.TabIndex = 2;
+            // 
+            // positionTrackBar
+            // 
+            this.positionTrackBar.AutoSize = false;
+            this.positionTrackBar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.positionTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.positionTrackBar.Location = new System.Drawing.Point(151, 440);
+            this.positionTrackBar.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.positionTrackBar.Maximum = 200;
+            this.positionTrackBar.Name = "positionTrackBar";
+            this.positionTrackBar.Size = new System.Drawing.Size(662, 25);
+            this.positionTrackBar.TabIndex = 17;
+            this.positionTrackBar.TabStop = false;
+            this.positionTrackBar.TickFrequency = 2;
+            this.positionTrackBar.Scroll += new System.EventHandler(this.positionTrackBar_Scroll);
             // 
             // pictureBox1
             // 
@@ -353,7 +390,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.picturePositionChange_Click);
             // 
             // playList
             // 
@@ -674,7 +711,6 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.Transparent;
             this.panelLogo.BackgroundImage = global::Meowzic_test.Properties.Resources.M_logo_3;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -709,6 +745,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.volBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.afterButton)).EndInit();
             this.panelTopContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.positionTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
@@ -758,6 +795,8 @@
         private System.Windows.Forms.Button MediaButton;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconPictureBox onRepeatButton;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TrackBar positionTrackBar;
     }
 }
 
