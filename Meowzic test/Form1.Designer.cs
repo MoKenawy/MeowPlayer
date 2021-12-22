@@ -49,6 +49,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTopContent = new System.Windows.Forms.Panel();
             this.positionIndicatorPanel = new System.Windows.Forms.Panel();
+            this.ElapsedTimeShadow = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.positionTrackBar = new System.Windows.Forms.TrackBar();
             this.playList = new System.Windows.Forms.CheckedListBox();
@@ -71,7 +72,6 @@
             this.MediaButton = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.ElapsedTimeShadow = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onRepeatButton)).BeginInit();
@@ -383,12 +383,24 @@
             this.positionIndicatorPanel.TabIndex = 18;
             this.positionIndicatorPanel.Visible = false;
             // 
+            // ElapsedTimeShadow
+            // 
+            this.ElapsedTimeShadow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ElapsedTimeShadow.BackColor = System.Drawing.Color.Transparent;
+            this.ElapsedTimeShadow.Location = new System.Drawing.Point(0, 0);
+            this.ElapsedTimeShadow.Margin = new System.Windows.Forms.Padding(0);
+            this.ElapsedTimeShadow.Name = "ElapsedTimeShadow";
+            this.ElapsedTimeShadow.Size = new System.Drawing.Size(0, 461);
+            this.ElapsedTimeShadow.TabIndex = 19;
+            this.ElapsedTimeShadow.Visible = false;
+            this.ElapsedTimeShadow.Click += new System.EventHandler(this.picturePositionChange_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Meowzic_test.Properties.Resources.cat_music;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -763,19 +775,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
-            // 
-            // ElapsedTimeShadow
-            // 
-            this.ElapsedTimeShadow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ElapsedTimeShadow.BackColor = System.Drawing.Color.Transparent;
-            this.ElapsedTimeShadow.Location = new System.Drawing.Point(0, 0);
-            this.ElapsedTimeShadow.Margin = new System.Windows.Forms.Padding(0);
-            this.ElapsedTimeShadow.Name = "ElapsedTimeShadow";
-            this.ElapsedTimeShadow.Size = new System.Drawing.Size(0, 461);
-            this.ElapsedTimeShadow.TabIndex = 19;
-            this.ElapsedTimeShadow.Visible = false;
-            this.ElapsedTimeShadow.Click += new System.EventHandler(this.picturePositionChange_Click);
             // 
             // Meowzic
             // 

@@ -95,54 +95,15 @@ namespace WindowsFormsApp2
 
         }
 
-        private void MoveCheckedDown()
-        {
-            var indices = playList.CheckedIndices;
-            int[] indicesArray = new int[indices.Count];
-            int count = 0;
-            for (int i = (indicesArray.Length - 1); i >= 0; i--)
-            {
-                indicesArray[count] = indices[i];
-                count++;
-            }
-            // works only for one item , until fixed
-            if (indices.Count == 1)
-            {
-                foreach (int index in indicesArray)
-                {
-                    if (index < playListDir.Count - 1)
-                    {
-                        string tempDir = playListDir[index + 1];
-                        playListDir[index + 1] = playListDir[index];
-                        playListDir[index] = tempDir;
-
-                        var tempName = playList.Items[index + 1];
-                        playList.Items[index + 1] = playList.Items[index];
-                        playList.Items[index] = tempName;
-
-
-                        playList.SetItemChecked(index, false);
-                        playList.SetItemChecked(index + 1, true);
-                        if (index == playIndex)
-                        {
-                            playIndex++;
-
-                        }
-                        else if (index + 1 == playIndex) { playIndex--; }
-
-                        playList.SelectedIndex = playIndex;
-                    }
-                }
-            }
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
             //timer = new System.Timers.Timer();
             //timer.Interval = 1000;
             //timer.Elapsed += OnTimeEvent;
             ElapsedTimeShadow.Parent = pictureBox1;
-            ElapsedTimeShadow.BackColor = Color.FromArgb(80, 28, 74, 173);
-            
+            ElapsedTimeShadow.BackColor = Color.FromArgb(120, 0, 0, 0);
+            //ElapsedTimeShadow.BackColor = Color.FromArgb(80, 28, 74, 173);
+
 
 
             try
@@ -590,6 +551,47 @@ namespace WindowsFormsApp2
 
         }
 
+        private void MoveCheckedDown()
+        {
+            var indices = playList.CheckedIndices;
+            int[] indicesArray = new int[indices.Count];
+            int count = 0;
+            for (int i = (indicesArray.Length - 1); i >= 0; i--)
+            {
+                indicesArray[count] = indices[i];
+                count++;
+            }
+            // works only for one item , until fixed
+            if (indices.Count == 1)
+            {
+                foreach (int index in indicesArray)
+                {
+                    if (index < playListDir.Count - 1)
+                    {
+                        string tempDir = playListDir[index + 1];
+                        playListDir[index + 1] = playListDir[index];
+                        playListDir[index] = tempDir;
+
+                        var tempName = playList.Items[index + 1];
+                        playList.Items[index + 1] = playList.Items[index];
+                        playList.Items[index] = tempName;
+
+
+                        playList.SetItemChecked(index, false);
+                        playList.SetItemChecked(index + 1, true);
+                        if (index == playIndex)
+                        {
+                            playIndex++;
+
+                        }
+                        else if (index + 1 == playIndex) { playIndex--; }
+
+                        playList.SelectedIndex = playIndex;
+                    }
+                }
+            }
+        }
+
         private void visualizeAudio()
         {
             if (audioFile != null)
@@ -833,8 +835,6 @@ namespace WindowsFormsApp2
             playList.BackColor = Color.FromArgb(29, 28, 31);
             this.BackColor = Color.FromArgb(29, 28, 31);
             this.ForeColor = Color.White;
-            //Suspend menuStrip1.ForeColor = Color.White;
-            //Suspend menuStrip1.BackColor = Color.FromArgb(29, 28, 31);
             pictureBox1.BorderStyle = BorderStyle.None;
             playList.BorderStyle = BorderStyle.None;
             playButton.BackColor = Color.FromArgb(80, 80, 82);
@@ -1008,6 +1008,11 @@ namespace WindowsFormsApp2
         {
             logo.BackColor = Color.DodgerBlue;
 
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello");
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
