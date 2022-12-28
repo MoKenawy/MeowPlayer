@@ -3,7 +3,9 @@
 UI :
 
 ![](https://github.com/mohammedgamal2002/Meowzic_Project/blob/master/Meowzic%20Screenshots/MediaMenu.png)
+
 ![](https://github.com/mohammedgamal2002/Meowzic_Project/blob/master/Meowzic%20Screenshots/PlaylistMenu.png)
+
 ![](https://github.com/mohammedgamal2002/Meowzic_Project/blob/master/Meowzic%20Screenshots/SoundWaveView.png)
 
 
